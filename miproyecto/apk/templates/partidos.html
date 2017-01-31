@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block titulo %}
+PARTIDOS LIGA BBVA
+{% endblock %}
+{% block equipo %}
+{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block clasificacion %}
+<br>
+<br>
+<br>
+{% load static %}
+<body background='{% static "imagenes/partidos.jpg" %}'>
+    <div class="container">
+                <div class="col-lg-10">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <div align="center">
+                                    <table class="table table-striped table-bordered table-hover" align="center" >
+                                        <thead>
+                                            <tr>
+                                                <th><b>Fecha</b></th>
+                                                <th><b>Local</b></th>
+                                                <th><b>Resultado</b></th>
+                                                <th><b>Visitante</b></th>
+                                                <th><b>Arbitro</b></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for jornada in jornadas %}
+                                            <tr>
+                                                <td><b>{{jornada.dia}}</b></td>
+                                                <td><b>{{jornada.local}}</b></td>
+                                                <td><b>{{jornada.resultado}}</b></td>
+                                                <td><b>{{jornada.visitante}}</b></td>
+                                                <td><b>{{jornada.arbitro}}</b></td>
+
+                                            </tr>
+                                        {% endfor %}  
+                                        </tbody>
+                                    </table>
+                                </div>        
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+    </div>
+</body>
+{% endblock %}

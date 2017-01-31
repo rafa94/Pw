@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% block titulo %}
+CLASIFICACION LIGA BBVA
+{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block clasificacion %} 
+{% load static %}
+<br>
+<br>
+<br> 
+<br>
+<br>
+<br> 
+    <body background='{% static "imagenes/clasificacion.Jpg" %}'>  
+        <div class="container">
+                    <div class="col-lg-12" >
+                        <div class="panel panel-default" ALIGN=center >
+                            <h1><font color="blue"><b>Clasificacion Liga Santander</b></font></h1>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" >
+                                        <thead>
+                                            <tr>
+
+                                                <th><b>Posicion</b></th>
+                                                <th><b>Equipo</b></th>
+                                                <th><b>Puntos</b></th>
+                                                <th><b>G.F.</b></th>
+                                                <th><b>G.C.</b></th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for clasificacion in clasificaciones %}
+                                        <thead>
+                                            <tr>
+                                                <td><b>{{clasificacion.pos}}</b></td>
+                                                <td><b>{{clasificacion.nombre}}</b></td>
+                                                <td><b>{{clasificacion.puntos}}</b></td>
+                                                <td><b>{{clasificacion.GF}}</b></td>
+                                                <td><b>{{clasificacion.GC}}</b></td>
+                                            </tr>
+                                        </thead>
+                                        </tbody>
+                                        {% endfor %}   
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+        </div>
+    </body>
+{% endblock %}

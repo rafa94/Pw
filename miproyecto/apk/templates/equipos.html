@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block titulo %}
+EQUIPOS LIGA BBVA
+{% endblock %}
+{% block menu%}
+{% endblock %}
+{%block header %}
+{% load static %}
+<br>
+<br>
+<br>
+<tbody>
+	<body background='{% static "imagenes/equipos.jpg" %}'>
+	{%if equipos %}
+	{%for equipo in equipos%}
+		<tr> 
+			<div class="container">
+				<div id="page-wrapper">
+        	    	<div class="row">
+            	    	<ul class="nav navbar-nav">
+                	    	<h1><a href="{% url 'jugadores' equipo.id %}" ><font color="white"><b>{{equipo.nombre}}</b></font></a></h1>
+                		</ul>
+                	</div>
+            	</div>
+    		</div>
+		</tr>
+	{%endfor%}
+	{%else%}
+	<h4>No hay equipos</h4>
+	{%endif%}
+	</body>
+</tbody>
+
+{% endblock %}
+{% block clasificacion %}
+{% endblock %}

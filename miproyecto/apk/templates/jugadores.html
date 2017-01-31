@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block titulo %}
+Jugadores
+{% endblock %}
+{% block menu%}
+{% endblock %}
+{% load static %}
+{% block header %}
+<br><br><br>
+<body background='{% static "imagenes/Jugadores.jpg" %}'>
+<div class="container">
+	<div id='page-wrapper'>
+		<div class="row">
+			<div class="col-lg-12">
+
+				<ul class="navbar-nav">
+    			{% for jugador in jugadores %}
+    			<p><img src='/{{jugador.foto}}' alt="" /></p>       
+				<p><h2><b><font color="white">{{ jugador.nombre }}</font></b></h2></p>
+				<p><h3><b><font color="white">Edad:{{ jugador.edad }}</font></b></h3></p>
+				<p><h3><b><font color="white">Posicion:{{ jugador.posicion }}</font></b></h3></p>
+				<br><br>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+{% endblock %}
+{% block clasificacion %}
+{% endblock %}
